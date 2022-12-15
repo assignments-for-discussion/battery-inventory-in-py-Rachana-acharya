@@ -12,11 +12,13 @@ def test_bucketing_by_number_of_cycles():
   counts = count_batteries_by_usage([100, 300, 500, 600, 900, 1000])
   if (count["lowCount"]<310):
     assert(counts["lowCount"] == 2)
-  elif:
-    for count["mediumCount"] in range(310,929):
-        assert(counts["mediumCount"] == 3)
-  else:
+    return lowCount
+  elif (count["highCount"]>930):
     assert(counts["highCount"] == 1)
+    return highCount   
+  else:
+    assert(counts["mediumCount"] == 3)
+    return mediumCount
   print("Done counting :)")
 
 
